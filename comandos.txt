@@ -1,0 +1,65 @@
+redis-server -> Inicia o redis
+redis-cli -> terminal para executar comandos
+SET "total_de_cursos" 105 -- resultado OK (Info. Salva)
+GET "total_de_cursos" -- retorna a quantidade salva
+
+O comando SET além de salvar, também altera o valor da chave.
+Ex: SET "total_de_cursos" 106
+
+DEL "total_de_cursos" --> Apaga a chave
+
+KEYS * || keys * --> Retorna todas as chaves salvas
+flushall --> apaga todas as chaves e valores salvos
+
+Um dos padrões ao criar uma chave
+SET resultado:17-05-2015:megasena "2, 15, 18, 25, 28, 32"
+
+Para salvar várias chaves ao mesmo tempo
+MSET resultado:03-05-2015:megasena "1, 3, 17, 19, 24, 26" resultado:22-04-2015:megasena "15, 18, 20, 32, 37, 41" resultado:15-04-2015:megasena "10, 15, 18, 22, 35, 43"
+
+Pesquisas
+keys "resultado*" --> Chaves que começam com resultado
+
+keys "resultado:*-05-2015:megasena" --> Pesquisas que comecem a palavra resultado e que sejam do mês de Maio de 2015 da megasena
+
+keys "resultado:1?-04-2015:megasena" --> Dessa forma é possível garantir a existência de apenas um caractere utilizando o "?".
+
+outro exemplo: KEYS "resultado: ??-??-2015*"
+
+
+Para realizar uma pesquisa que estejam entre dias (qualquer coisa) 3 e (qualquer coisa) 5:
+keys "resultado:??-??-????:megasena"
+keys "resultado:?[35]-??-????:megasena" / keys "resultado:?[3,5]-??-????:megasena"
+
+Para obter os resultados dos dias 15 ou 17 de qualquer mês, de qualquer ano, da Mega-sena ou da Giga-sena:
+
+keys "resultado:1[57]-??-????:*sena" / keys "resultado:1[5,
+7]-??-????:*sena"
+
+Para salvar informações em um tipo de hash
+HSET "resultado:24-05-2015:megasena" "numeros" "13, 17, 19, 25, 28, 32"
+
+HSET "resultado:24-05-2015:megasena" "ganhadores" "23"
+
+Para recuperar os dados
+HGET "resultado:24-05-2015:megasena" "ganhadores"
+HGET "resultado:24-05-2015:megasena" "numeros"
+
+Para remover um campo de um hash, podemos utilizar o comando HDEL.
+HDEL "resultado:24-05-2015:megasena" "numeros"
+HGET "resultado:24-05-2015:megasena" "numeros"
+
+Da mesma forma que podemos atribuir vários conjuntos de chave e valor de um único comando utilizando o MSET, podemos utilizar o comando HMSET para atribuir vários valores quando utilizarmos um hash no valor.
+
+O comando funciona da seguinte forma:
+HMSET nome_da_chave campo1 "Ola" campo2 "Mundo"
+
+HMSET "resultado:05-06-2015" "numeros" "5, 19, 23, 28, 46, 49" "ganhadores" "16"
+HMGET "resultado:05-06-2015" "numeros" "ganhadores"
+"resultado:05-06-2015" "numeros"
+HMGET "resultado:05-06-2015" "ganhadores"
+
+Obs.: Também é possível utilizar - HGET "resultado:05-06-2015" "numeros"
+
+Para recuperar todos os valores que existem no hash: HGETALL, passando como parâmetro o nome da chave (e valor) que está associada ao hash.
+HGETALL "resultado:05-06-2015"
