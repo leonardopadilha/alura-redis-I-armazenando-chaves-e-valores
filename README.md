@@ -41,3 +41,15 @@ Iniciar o redis após instalação
 ```bash
   MSET "resultado:03-05-2015:megasena" "1, 3, 17, 19, 24, 26" resultado:22-04-2015:megasena "15, 18, 20, 32, 37, 41" resultado:15-04-2015:megasena "10, 15, 18, 22, 35, 43"
 ```
+
+## Para realizar pesquisas que comecem com "resultado"
+
+```bash
+  KEYS "resultado*"
+```
+
+## Para realizar pesquisas que comecem a palavra resultado e que sejam do mês de Maio de 2015 da megasena
+
+```bash
+  KEYS "resultado:*-05-2015:megasena"
+```
