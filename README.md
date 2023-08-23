@@ -53,3 +53,11 @@ Iniciar o redis após instalação
 ```bash
   KEYS "resultado:*-05-2015:megasena"
 ```
+
+## Dessa forma é possível garantir a existência de apenas um caractere utilizando o "?"
+
+```bash
+  keys "resultado:1?-04-2015:megasena"
+  KEYS "resultado: ??-??-2015*"
+  keys "resultado:??-??-????:megasena"
+```
