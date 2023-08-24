@@ -61,3 +61,10 @@ Iniciar o redis após instalação
   KEYS "resultado: ??-??-2015*"
   keys "resultado:??-??-????:megasena"
 ```
+
+## Para realizar uma pesquisa que estejam entre dias (qualquer coisa) 3 e (qualquer coisa) 5
+
+```bash
+  keys "resultado:?[35]-??-????:megasena"
+  keys "resultado:?[3,5]-??-????:megasena"
+```
