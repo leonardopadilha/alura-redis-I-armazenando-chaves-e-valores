@@ -68,3 +68,10 @@ Iniciar o redis após instalação
   keys "resultado:?[35]-??-????:megasena"
   keys "resultado:?[3,5]-??-????:megasena"
 ```
+
+## Para obter os resultados dos dias 15 ou 17 de qualquer mês, de qualquer ano, da Mega-sena ou da Giga-sena
+
+```bash
+  KEYS "resultado:1[57]-??-????:*sena"
+  keys "resultado:1[5,7]-??-????:*sena"
+```
