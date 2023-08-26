@@ -75,3 +75,17 @@ Iniciar o redis após instalação
   KEYS "resultado:1[57]-??-????:*sena"
   keys "resultado:1[5,7]-??-????:*sena"
 ```
+
+## Para salvar informações em um tipo de hash
+
+```bash
+  HSET "resultado:24-05-2015:megasena" "numeros" "13, 17, 19, 25, 28, 32"
+  HSET "resultado:24-05-2015:megasena" "ganhadores" "23"
+```
+
+## Para recuperar os dados
+
+```bash
+  HGET "resultado:24-05-2015:megasena" "ganhadores"
+  HGET "resultado:24-05-2015:megasena" "numeros"
+```
