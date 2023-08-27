@@ -6,7 +6,13 @@
 
 ## Inicialização
 
-Iniciar o redis após instalação
+Iniciar servidor do redis
+
+```bash
+  redis-server
+```
+
+Executar comandos do redis
 
 ```bash
   redis-cli
@@ -88,4 +94,10 @@ Iniciar o redis após instalação
 ```bash
   HGET "resultado:24-05-2015:megasena" "ganhadores"
   HGET "resultado:24-05-2015:megasena" "numeros"
+```
+
+## Para remover um campo de um hash, podemos utilizar o comando
+
+```bash
+  HDEL "resultado:24-05-2015:megasena" "numeros"
 ```
