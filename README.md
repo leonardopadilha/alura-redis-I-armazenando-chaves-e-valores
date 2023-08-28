@@ -101,3 +101,9 @@ Executar comandos do redis
 ```bash
   HDEL "resultado:24-05-2015:megasena" "numeros"
 ```
+## Da mesma forma que podemos atribuir vários conjuntos de chave e valor de um único comando utilizando o MSET, podemos utilizar o comando HMSET para atribuir vários valores quando utilizarmos um hash no valor.
+
+```bash
+  HMSET nome_da_chave campo1 "Ola" campo2 "Mundo"
+  HMSET "resultado:05-06-2015" "numeros" "5, 19, 23, 28, 46, 49" "ganhadores" "16"
+```
