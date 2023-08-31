@@ -106,4 +106,13 @@ Executar comandos do redis
 ```bash
   HMSET nome_da_chave campo1 "Ola" campo2 "Mundo"
   HMSET "resultado:05-06-2015" "numeros" "5, 19, 23, 28, 46, 49" "ganhadores" "16"
+  HMSET "sessao:usuario:1675" "nome" "guilherme" "total_de_produtos" "3" "sobrenome" "silveira"
+```
+## Para pesquisar as informações
+
+```bash
+  HMGET "resultado:05-06-2015" "numeros" "ganhadores" "resultado:05-06-2015" "numeros"
+  HMGET "resultado:05-06-2015" "ganhadores"
+  HGET "resultado:05-06-2015" "numeros"
+  HGET "sessao:usuario:1675" "nome"
 ```
