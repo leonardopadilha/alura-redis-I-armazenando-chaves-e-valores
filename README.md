@@ -116,3 +116,9 @@ Executar comandos do redis
   HGET "resultado:05-06-2015" "numeros"
   HGET "sessao:usuario:1675" "nome"
 ```
+
+## Para recuperar todos os valores que existem no hash: HGETALL, passando como parâmetro o nome da chave (e valor) que está associada ao hash
+
+```bash
+  HGETALL "resultado:05-06-2015"
+```
