@@ -122,3 +122,9 @@ Executar comandos do redis
 ```bash
   HGETALL "resultado:05-06-2015"
 ```
+
+## Para indicar que queremos que os valores sejam apagados após um certo intervalo de tempo, utilizamos o comando EXPIRE, passando como argumentos o nome da chave e a quantidade de tempo em segundos:
+
+```bash
+  EXPIRE "sessao:usuario:1675" 1800
+```
