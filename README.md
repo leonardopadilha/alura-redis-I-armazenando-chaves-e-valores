@@ -128,3 +128,15 @@ Executar comandos do redis
 ```bash
   EXPIRE "sessao:usuario:1675" 1800
 ```
+
+## Isso significa que daqui 1800 segundos, ou 30 minutos, os dados do usuário serão apagados, expirados. Para sabermos quanto tempo falta, para que essas informações sejam apagadas usamos o comando Time Left ou "TTL
+
+```bash
+  TTL "sessao:usuario:1675"
+```
+## Para incrementar o contador (um a um)
+
+```bash
+  SET pagina:/contato:25-05-2015 1
+  INCR pagina:/contato:25-05-2015
+```
