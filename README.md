@@ -140,3 +140,9 @@ Executar comandos do redis
   SET pagina:/contato:25-05-2015 1
   INCR pagina:/contato:25-05-2015
 ```
+
+## Para decrementar o contador (um a um)
+
+```bash
+  DECR pagina:/contato:25-05-2015
+```
