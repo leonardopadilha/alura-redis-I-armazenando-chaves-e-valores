@@ -146,3 +146,9 @@ Executar comandos do redis
 ```bash
   DECR pagina:/contato:25-05-2015
 ```
+
+## Para incrementar o valor de 15 em cada compra (incrementa valores diferentes de 1)
+
+```bash
+  INCRBY compras:25-05-2015:valor 15
+```
