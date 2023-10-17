@@ -152,3 +152,9 @@ Executar comandos do redis
 ```bash
   INCRBY compras:25-05-2015:valor 15
 ```
+
+## Para decrementar valores diferentes de 1
+
+```bash
+  DECRBY compras:25-05-2015:valor 10
+```
