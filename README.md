@@ -158,3 +158,9 @@ Executar comandos do redis
 ```bash
   DECRBY compras:25-05-2015:valor 10
 ```
+
+## Para incrementar valores diferentes de inteiros
+
+```bash
+  INCRBYFLOAT compras:25-05-2015:valor 22.50
+```
