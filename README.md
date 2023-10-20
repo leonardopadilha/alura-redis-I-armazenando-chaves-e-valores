@@ -170,3 +170,9 @@ Executar comandos do redis
 ```bash
   INCRBYFLOAT compras:25-05-2015:valor -0.50
 ```
+
+## Colocar um id de usuário com usuário true
+
+```bash
+  SETBIT acesso:25-05-2015 15 1
+```
