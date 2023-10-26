@@ -171,8 +171,37 @@ Executar comandos do redis
   INCRBYFLOAT compras:25-05-2015:valor -0.50
 ```
 
-## Colocar um id de usuário com usuário true
+## Colocar um id de usuário como true
 
 ```bash
   SETBIT acesso:25-05-2015 15 1
+```
+
+## Para recuperar um id de usuário com usuário e valor o bit
+
+```bash
+  GETBIT acesso:25-05-2015 13 1
+```
+
+## Para contar a quantidade de BIT que estejam como true
+
+```bash
+  SETBIT acesso:26-05-2015 1 1
+  SETBIT acesso:26-05-2015 2 1
+  BITCOUNT acesso:26-05-2015
+```
+## Para aplicar operador AND
+
+```bash 
+  BITOP AND acesso:25-e-26-05-2015 acesso:25-05-2015 acesso:26-05-2015
+  GETBIT acesso:25-e-26-05-2015 1 (id ou chave do usuário)
+  BITCOUNT acesso:25-e-26-05-2015
+```
+
+## Para aplicar operador OR
+
+```bash
+  BITOP OR acesso:25-ou-26-05-2015 acesso:25-05-2015 acesso:26-05-2015
+  GETBIT acesso:25-ou-26-05-2015 1 (id ou chave do usuário)
+  BITCOUNT acesso:25-ou-26-05-2015
 ```
